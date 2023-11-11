@@ -1,0 +1,466 @@
+* {
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Noto Sans KR', sans-serif;
+   font-size: 10px;
+   margin: 0;
+}
+
+ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+label {
+   cursor: pointer;
+}
+
+.main-header {
+   height: 3.1rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: white;
+   padding: 0 1rem;
+   overflow: hidden;
+}
+
+.logo img {
+   width: 10rem;
+}
+
+.search img {
+   width: 2em;
+}
+
+.main-nav {
+   display: flex;
+   gap: 1rem;
+}
+
+.login span {
+   font-size: .8rem;
+   font-weight: bold;
+   color: white;
+   background-color: #00256C;
+   padding: .2rem .8rem .4rem;
+   border-radius: 40px;
+}
+
+/* hamburger */
+
+.hambuger-manu {
+   position: relative;
+   cursor: pointer;
+}
+
+.hambuger {
+   display: inline-block;
+   width: 25px;
+   height: 2px;
+   border-radius: 20px;
+   background-color: #00256C;
+}
+
+.hambuger::before {
+   content: '';
+   position: absolute;
+   top: 2px;
+   left: 0;
+   width: 25px;
+   height: 2px;
+   background-color: #00256C;
+   border-radius: 20px;
+}
+
+.hambuger::after {
+   content: '';
+   position: absolute;
+   bottom: 4px;
+   right: 0;
+   width: 20px;
+   height: 2px;
+   background-color: #00256C;
+   border-radius: 20px;
+}
+
+/* Main section */
+
+input[type="radio"] {
+   display: none;
+}
+
+.container {
+   background-image: url("https://www.koreanair.com/wwwupload/maincontents/quickbooking/mainopenimg_mo.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center top;
+
+   padding: 1.5rem 1.3rem;
+}
+
+form {
+   /* max-width: 100%; */
+   /* background-color: white; */
+   margin: 0 auto;
+   border-radius: 1rem;
+   overflow: hidden;
+}
+
+.tabs-selection {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.tab-label {
+   position: relative;
+   display: inline-block;
+   font-size: .8rem;
+   text-align: center;
+   color: white;
+   padding: 1rem .5rem;
+   background: #65728A;
+   flex-grow: 1;
+}
+
+.tab-label::after {
+   content: "|";
+   position: absolute;
+   top: .8rem;
+   right: -2px;
+   font-size: 1rem;
+   color: rgb(252, 252, 252);
+   z-index: 100;
+}
+
+.tab-label:hover {
+   text-decoration: underline;
+}
+
+.tab-content {
+   display: none;
+   width: 100%;
+   background-color: white;
+   order: 1;
+   padding: 1rem;
+}
+
+.tab-radio:checked+.tab-label {
+   font-weight: bold;
+   color: black;
+   background-color: white;
+}
+
+.tab-radio:checked+.tab-label+.tab-content {
+   display: block;
+}
+
+.book-trip-selection {
+   text-align: center;
+}
+
+
+.book-selection {
+   display: inline-block;
+   padding: .5rem 0;
+   border: 1px solid rgba(205, 205, 205, 0.85);
+   border-radius: 2rem;
+   /* overflow: hidden; */
+}
+
+.book-selection span {
+   font-size: .85rem;
+   color: #00256C;
+   padding: .5rem 1rem;
+   cursor: pointer;
+}
+
+.book-selection span:hover {
+   text-decoration: underline;
+}
+
+.book-selection span:first-child {
+   font-weight: bold;
+   color: white;
+   background-color: #00256C;
+   padding: .5rem 1.5rem;
+   border-radius: 2rem;
+}
+
+.trip-selection {
+   width: 70%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1.8rem;
+   flex-wrap: wrap;
+   margin: 1.5rem auto;
+}
+
+.trip-selection label {
+   font-size: 1rem;
+   color: #646464;
+}
+
+.trip-input:checked+.trip-label {
+   position: relative;
+   font-weight: bold;
+   color: #00256C;
+   /* border-bottom: 3px solid #DE001B; */
+}
+
+.trip-input:checked+.trip-label::after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 3px;
+   left: 0;
+   bottom: -8px;
+   background-color: #DE001B;
+}
+
+.multisegments-label {
+   position: relative;
+   margin-top: -9px;
+}
+
+.multisegments-label::after {
+   content: "";
+   position: absolute;
+   width: .4rem;
+   height: .4rem;
+   top: .6rem;
+   right: -0.9rem;
+   /* bottom: 0; */
+   border-top: 1px solid #646464;
+   border-right: 1px solid #646464;
+   transform: rotate(45deg);
+}
+
+
+/* Flight Selection */
+
+.airport-selection {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 4rem;
+   padding-bottom: 1.2rem;
+   border-bottom: 1px dotted #bfbfbf;
+}
+
+.btn {
+   border: none;
+   background-color: transparent;
+}
+
+.from p,
+.to p {
+   font-size: 1.9rem;
+   font-weight: 600;
+   margin: 0;
+}
+
+.to p,
+.to span {
+   color: #727272;
+}
+
+/* Date Selection */
+.date-selection p {
+   width: 100%;
+   font-size: 1.05rem;
+   vertical-align: middle;
+   text-align: center;
+   color: #727272;
+   margin: 0;
+   padding: 1rem 3rem;
+   border-bottom: 1px solid #727272;
+}
+
+.date-selection p span svg {
+   margin-bottom: -8px;
+}
+
+.departure-date {
+   display: none;
+}
+
+/* Passengers Selection */
+.passengers-selection {
+   margin-top: .7rem;
+}
+
+.passengers-selection span,
+.cabin-selection span {
+   display: inline-block;
+   font-size: .9rem;
+   color: #727272;
+}
+
+.passengers,
+.cabin {
+   display: flex;
+   justify-content: space-between;
+   border-bottom: 1px solid #727272;
+}
+
+.passengers span,
+.cabin span {
+   font-size: 1rem;
+   font-weight: 700;
+   color: black;
+   padding-bottom: 7px;
+}
+
+.cabin span {
+   font-weight: 400;
+   color: #727272;
+}
+
+.passengers svg,
+.cabin svg {
+   margin-top: -5px;
+}
+
+.search-btn {
+   margin-top: 2rem;
+}
+
+.search-btn .btn {
+   width: 100%;
+   font-size: 1rem;
+   color: white;
+   background-color: #00256C;
+   padding: .75rem 0;
+   border-radius: .8rem;
+}
+
+/* bot icon */
+.bot-icon {
+   position: fixed;
+   bottom: 2.5rem;
+   right: 1rem;
+   display: inline-block;
+   width: 50px;
+   height: 50px;
+   background-color: #007BAA;
+   background-image: url("https://www.koreanair.com/icon-float__chatbot.svg");
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center 5px;
+   border-radius: 50%;
+}
+
+
+@media screen and (min-width:527px) {
+   .multisegments-label {
+      margin-top: 0;
+   }
+}
+
+@media screen and (min-width:768px) {
+   .container {
+      background-image: url("https://www.koreanair.com/wwwupload/maincontents/quickbooking/mainopenimg_ta.jpg");
+   }
+}
+
+@media screen and (min-width:1060px) {
+   .container {
+      background-image: url("https://www.koreanair.com/wwwupload/maincontents/quickbooking/mainopen.jpg");
+      padding: 5rem 2rem;
+   }
+
+   form {
+      max-width: 1280px;
+   }
+
+   .tab-label {
+      font-size: .9rem;
+      padding: 1rem;
+      border-radius: 1rem 1rem 0 0;
+   }
+
+   .tab-label::after {
+      content: "";
+   }
+
+   .tab-content {
+      padding: 2rem 2.5rem 3rem;
+   }
+
+   .book-trip-selection {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+   }
+
+   .trip-selection {
+      justify-content: flex-start;
+      margin: 0 0 1em 2rem;
+   }
+
+   .flight-selections {
+      display: flex;
+      /* justify-content: space-between; */
+      align-items: center;
+      gap: 2rem;
+
+   }
+
+   .airport-selection,
+   .date-selection,
+   .passengers-selection,
+   .search-btn {
+      flex-grow: 1;
+      margin: 0;
+      padding: 0;
+   }
+
+   .airport-selection {
+      gap: 1rem;
+      border: none;
+   }
+
+   .from span,
+   .to span {
+      font-size: 1rem;
+   }
+
+   .departure-date {
+      display: block;
+      margin: -0.9rem 0 .9rem;
+   }
+
+   .date-selection p {
+      font-size: .9rem;
+      padding: 1.4rem 1rem .5rem;
+      border-bottom: 1px solid #727272;
+      text-align: left;
+   }
+
+   .passengers,
+   .cabin {
+      margin-top: 1rem;
+      margin-bottom: -0.5rem;
+   }
+
+   .cabin span {
+      padding-right: 1rem;
+   }
+
+   .cabin .cabin-class {
+      display: none;
+   }
+
+   .search-btn {
+      align-self: flex-end;
+   }
+
+   .search-btn .btn {
+      padding: .9rem;
+   }
+}
